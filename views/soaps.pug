@@ -9,7 +9,13 @@ block content
     div(class= "container-fluid")
         div(class = "row")  
             each item, index in soaps 
-                div(class= "col-sm-2") Soap_Name:  #{item.Soap_Name}
-                div(class= "col-sm-2") Soap_cost:  #{item.Soap_cost}
-                div(class= "col-sm-2") Soap_color:   #{item.Soap_Color}
+                div(class= "col-sm-2", onclick=`soaps(${index})`) Soap_Name:  #{item.Soap_Name}
+                div(class= "col-sm-2", onclick=`soaps(${index})`) Soap_cost:  #{item.Soap_cost}
+                div(class= "col-sm-2", onclick=`soaps(${index})`) Soap_color:   #{item.Soap_Color}
+
+    script.
+        function soaps(Index){
+            alert(`you selected your favorite soap ${Index+1}`)
+        }
+
 
